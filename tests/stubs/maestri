@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Test double for the maestri CLI.
+# Every call is appended to $STUB_LOG as one line, its arguments joined by \x1f.
+#   role show <name>   exits 0
+#   check <name>       prints $STUB_SCREENS/<name> if present, else a line that matches every fixture footer regex
+#   (check exits 1 for every name listed in STUB_GONE, space-separated)
+#   ask <name> <text>  (not --raw) replaces the screen with $STUB_SCREENS/<name>.reply if present (the agent answers)
+#   connect a b        fails when one end is Oracle and STUB_NO_ORACLE=1 (no Oracle on the canvas)
+# Every other call exits 0 silently.
+set -euo pipefail
+
+(
+  IFS=$'\x1f'
+  printf '%s\n' "$*"
+) >> "${STUB_LOG:?STUB_LOG must be set}"
+
+case "${1:-}" in
+  check)
+    case " ${STUB_GONE:-} " in *" ${2:-} "*) exit 1 ;; esac
+    if [ -n "${STUB_SCREENS:-}" ] && [ -f "$STUB_SCREENS/${2:-}" ]; then
+      cat "$STUB_SCREENS/$2"
+    else
+      printf '%s\n' 'Opus 5.5 | Sonnet 5.5 | GPT-6.1-Sol'
+    fi
+    ;;
+  ask)
+    if [ "${3:-}" != --raw ] && [ -n "${STUB_SCREENS:-}" ] && [ -f "$STUB_SCREENS/${2:-}.reply" ]; then
+      cp "$STUB_SCREENS/$2.reply" "$STUB_SCREENS/$2"
+    fi
+    ;;
+  connect)
+    if [ "${STUB_NO_ORACLE:-0}" = 1 ] && { [ "${2:-}" = Oracle ] || [ "${3:-}" = Oracle ]; }; then
+      echo "no agent named Oracle on this canvas" >&2
+      exit 1
+    fi
+    ;;
+esac
+exit 0

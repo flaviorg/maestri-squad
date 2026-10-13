@@ -1,0 +1,15 @@
+main/00-header.md
+main/01-preflight.md
+main/02-questions.md
+main/03-project-reading.md
+main/04-kit-generation.md
+main/05-owner-review.md
+main/06-workspace-roles.md
+main/07-first-floor.md
+appendix/A-rules.md
+appendix/B-roles.md
+appendix/C-stacks.md
+appendix/D-scripts.md
+appendix/E-operating-loop.md
+appendix/F-lessons.md
+appendix/G-templates.md

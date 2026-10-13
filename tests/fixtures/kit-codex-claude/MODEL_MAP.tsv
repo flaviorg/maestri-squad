@@ -1,0 +1,33 @@
+role	size	preset	model	effort	launch_template	footer_regex	fallback_model
+Helm	XS	Codex	gpt-6.1-sol	high	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6\.1-Sol	gpt-6-astra
+Anvil	XS	Codex	gpt-6.1-sol	medium	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6\.1-Sol	gpt-6-astra
+Probe	XS	Codex	gpt-6.1-sol	medium	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6\.1-Sol	gpt-6-astra
+Onyx	XS	Claude Code	claude-opus-5-5	high	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Opus 5\.5	claude-sonnet-5-5
+Dock	XS	Claude Code	claude-sonnet-5-5	medium	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Sonnet 5\.5	claude-opus-5-5
+Helm	S	Codex	gpt-6.1-sol	high	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6\.1-Sol	gpt-6-astra
+Veto	S	Claude Code	claude-opus-5-5	high	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Opus 5\.5	claude-sonnet-5-5
+Anvil	S	Codex	gpt-6.1-sol	medium	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6\.1-Sol	gpt-6-astra
+Probe	S	Codex	gpt-6.1-sol	medium	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6\.1-Sol	gpt-6-astra
+Rook	S	Claude Code	claude-sonnet-5-5	high	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Sonnet 5\.5	claude-opus-5-5
+Onyx	S	Claude Code	claude-opus-5-5	high	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Opus 5\.5	claude-sonnet-5-5
+Dock	S	Claude Code	claude-sonnet-5-5	medium	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Sonnet 5\.5	claude-opus-5-5
+Helm	M	Codex	gpt-6.1-sol	high	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6\.1-Sol	gpt-6-astra
+Veto	M	Claude Code	claude-opus-5-5	xhigh	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Opus 5\.5	claude-sonnet-5-5
+Anvil	M	Codex	gpt-6.1-sol	high	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6\.1-Sol	gpt-6-astra
+Probe	M	Codex	gpt-6.1-sol	high	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6\.1-Sol	gpt-6-astra
+Rook	M	Claude Code	claude-sonnet-5-5	high	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Sonnet 5\.5	claude-opus-5-5
+Onyx	M	Claude Code	claude-opus-5-5	xhigh	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Opus 5\.5	claude-sonnet-5-5
+Dock	M	Claude Code	claude-sonnet-5-5	medium	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Sonnet 5\.5	claude-opus-5-5
+Helm	L	Codex	gpt-6.1-sol	xhigh	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6\.1-Sol	gpt-6-astra
+Veto	L	Claude Code	claude-opus-5-5	xhigh	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Opus 5\.5	claude-sonnet-5-5
+Anvil	L	Codex	gpt-6.1-sol	xhigh	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6\.1-Sol	gpt-6-astra
+Probe	L	Codex	gpt-6.1-sol	high	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6\.1-Sol	gpt-6-astra
+Rook	L	Claude Code	claude-sonnet-5-5	xhigh	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Sonnet 5\.5	claude-opus-5-5
+Onyx	L	Claude Code	claude-opus-5-5	xhigh	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Opus 5\.5	claude-sonnet-5-5
+Dock	L	Claude Code	claude-sonnet-5-5	medium	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Sonnet 5\.5	claude-opus-5-5
+Oracle	*	Claude Code	claude-opus-5-5	high	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Opus 5\.5	claude-sonnet-5-5
+Aegis	*	Claude Code	claude-opus-5-5	high	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Opus 5\.5	claude-sonnet-5-5
+Loom	*	Codex	gpt-6.1-sol	medium	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6\.1-Sol	gpt-6-astra
+Prism	*	Claude Code	claude-sonnet-5-5	high	claude --model {model} --effort {effort} --permission-mode auto --add-dir {floor_path} --add-dir {kit} -n {name}	Sonnet 5\.5	claude-opus-5-5
+Broom	*	Codex	gpt-6.1-sol	medium	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6\.1-Sol	gpt-6-astra
+Fallback	*	Codex	gpt-6-astra	high	codex -m {model} -c model_reasoning_effort={effort} -c check_for_update_on_startup=false --add-dir {kit}	GPT-6-Astra	gpt-6-astra

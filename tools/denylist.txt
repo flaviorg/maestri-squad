@@ -1,0 +1,16 @@
+# Public sanitize list: one POSIX extended regex per line; lines starting with # and blank lines are ignored.
+# Keep it generic. Project names, ticket keys and usernames go in your private, untracked list
+# (.git/info/denylist, or the file named by $SANITIZE_DENYLIST_PRIVATE), never here.
+
+# A personal home directory on macOS or Linux.
+/Users/[a-z]
+/home/[a-z]
+
+# A private key pasted into a file.
+-----BEGIN [A-Z ]*PRIVATE KEY-----
+
+# Common secret token prefixes: GitHub, AWS access key, Slack, Anthropic.
+gh[pousr]_[A-Za-z0-9]{36}
+AKIA[0-9A-Z]{16}
+xox[abprs]-[A-Za-z0-9-]{10,}
+sk-ant-[A-Za-z0-9_-]{20,}
