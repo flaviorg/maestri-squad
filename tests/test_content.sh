@@ -2,7 +2,9 @@
 # Content checks for the generic appendices (A rules, B roles, E operating loop, F lessons, G templates).
 # Runs against a fresh build of SQUAD-BOOTSTRAP.md in a temp dir, so it tests the sources in src/.
 # shellcheck disable=SC2016  # literal $KIT and backticks are the expected text, not expansions
-set -euo pipefail
+# No pipefail here: these checks pipe large strings into readers that stop early (grep -q, head -n 1). On Linux
+# the writer then dies of SIGPIPE, and pipefail would turn a match into a failure or abort the suite.
+set -eu
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 # shellcheck source=tests/lib.sh
 . "$ROOT/tests/lib.sh"

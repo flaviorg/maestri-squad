@@ -1402,7 +1402,9 @@ die() {
   exit 1
 }
 
-[ $# -ge 4 ] && [ $# -le 5 ] || die "usage: staff_floor.sh <KEY> <XS|S|M|L> <FLOOR_PATH> <SLOT> [LOW|MEDIUM|HIGH]"
+if [ $# -lt 4 ] || [ $# -gt 5 ]; then
+  die "usage: staff_floor.sh <KEY> <XS|S|M|L> <FLOOR_PATH> <SLOT> [LOW|MEDIUM|HIGH]"
+fi
 KEY="$1"
 SIZE="$2"
 FP="$3"
