@@ -1,19 +1,71 @@
-# Maestri Squad
+<p align="center">
+  <img src="docs/banner.png" alt="Maestri Squad: um único arquivo Markdown que transforma o Maestro do Maestri no líder de um squad de software multiagente" width="100%">
+</p>
 
-Um único arquivo Markdown que transforma o Maestro do Maestri no líder de um squad de software multiagente: ele
-entrevista você, lê o seu projeto, gera um kit e coloca cada tarefa em um floor isolado, com planejador, builders,
-revisores e um shipper separados.
+<h1 align="center">Maestri Squad</h1>
 
-[![CI](https://github.com/flaviorg/maestri-squad/actions/workflows/ci.yml/badge.svg)](https://github.com/flaviorg/maestri-squad/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Tested with Maestri 0.51.0](https://img.shields.io/badge/tested%20with-Maestri%200.51.0-informational)](SQUAD-BOOTSTRAP.md)
+<p align="center">
+  <strong>Um único arquivo Markdown que transforma o Maestro do <a href="https://www.themaestri.app/">Maestri</a> no líder de um squad de software multiagente.</strong><br>
+  Ele entrevista você, lê o seu projeto, gera um kit e coloca cada tarefa em um floor isolado, com planejador, builders, revisores cegos e um shipper separados.
+</p>
+
+<p align="center">
+  <a href="https://github.com/flaviorg/maestri-squad/actions/workflows/ci.yml"><img src="https://github.com/flaviorg/maestri-squad/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-E5261A.svg" alt="Licença: MIT"></a>
+  <a href="SQUAD-BOOTSTRAP.md"><img src="https://img.shields.io/badge/testado%20com-Maestri%200.51.0-161310.svg" alt="Testado com Maestri 0.51.0"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/vers%C3%A3o-1.0.0-7A7166.svg" alt="Versão 1.0.0"></a>
+</p>
 
 [English](README.md) · Português (Brasil)
+
+<p align="center">
+  <img src="docs/demo.gif" alt="Tour de 16 segundos: cole o arquivo, responda quatro perguntas, revise o kit, um floor por tarefa, gates com evidência" width="100%">
+</p>
 
 O produto é o [`SQUAD-BOOTSTRAP.md`](SQUAD-BOOTSTRAP.md). Você entrega o arquivo ao Maestro (o agente líder de um
 workspace do Maestri; o Maestri é o workspace espacial para agentes de IA no macOS) e ele faz o resto, perguntando só o
 que não consegue descobrir lendo o repositório. Não há nada para instalar: o setup é uma conversa, e o resultado é uma
 pasta de arquivos de texto.
+
+```text
+Download the bootstrap with curl -fsSL https://raw.githubusercontent.com/flaviorg/maestri-squad/v1.0.0/SQUAD-BOOTSTRAP.md -o /tmp/SQUAD-BOOTSTRAP.md, read /tmp/SQUAD-BOOTSTRAP.md in full, and follow it for this project.
+```
+
+Cole isso no seu Maestro e responda quatro perguntas. O passo a passo completo está em [Início rápido](#início-rápido).
+
+**Em resumo**
+
+| | |
+|---|---|
+| **Separação de funções** | Helm planeja, Veto aprova, Probe escreve os testes que falham, Anvil faz passar, Rook e Onyx revisam às cegas, Dock é o único que commita. |
+| **Um floor por tarefa** | Cada tarefa ganha o próprio worktree do git, branch, porta do dev server e dispositivo. Seu checkout nunca é tocado. |
+| **Evidência, não impressão** | "Pronto" significa um comando e a saída dele registrados na nota TRACE. Todo gate fica logado. |
+| **Revisão entre famílias** | Os gates rodam em outra família de modelos que a dos planejadores e builders, quando você tem dois provedores. |
+| **Nada sai da máquina** | Push, PR e escritas no tracker esperam o seu ok explícito. Quatro linhas de segurança que nenhum briefing anula. |
+| **No tamanho da tarefa** | Floors XS rodam quatro agentes; S, M e L rodam sete, com esforço crescente. Os modelos são alocados pela cota. |
+
+<details>
+<summary><b>Conteúdo</b></summary>
+
+- [Por quê](#por-quê)
+- [Como funciona](#como-funciona)
+- [Requisitos](#requisitos)
+- [Início rápido](#início-rápido)
+- [O que o Maestro vai perguntar](#o-que-o-maestro-vai-perguntar)
+- [O kit gerado](#o-kit-gerado)
+- [O squad](#o-squad)
+- [Tamanhos de tarefa](#tamanhos-de-tarefa)
+- [Alocação de modelos](#alocação-de-modelos)
+- [O pipeline](#o-pipeline)
+- [Stacks suportadas](#stacks-suportadas)
+- [Padrões de segurança](#padrões-de-segurança)
+- [Atualização](#atualização)
+- [Solução de problemas](#solução-de-problemas)
+- [FAQ](#faq)
+- [Como contribuir](#como-contribuir)
+- [Licença](#licença)
+
+</details>
 
 ## Por quê
 
@@ -623,3 +675,8 @@ padrões de duas listas, ambas com uma regex POSIX estendida por linha, ignorand
 ## Licença
 
 [MIT](LICENSE) © 2026 Flavio Gouveia
+
+### Créditos
+
+- [Maestri](https://www.themaestri.app/), o canvas infinito para orquestrar agentes de IA, dos seus autores. Este projeto é um kit independente para ele e não tem vínculo com o Maestri.
+- Feito por [Flavio Gouveia](https://oflavio.dev), engenheiro sênior de frontend e mobile que mostra como um dev de verdade usa Claude e Codex no trabalho · [Instagram @oflavio.dev](https://www.instagram.com/oflavio.dev/) · [GitHub](https://github.com/flaviorg)

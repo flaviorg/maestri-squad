@@ -1,19 +1,71 @@
-# Maestri Squad
+<p align="center">
+  <img src="docs/banner.png" alt="Maestri Squad: one Markdown file that turns your Maestri Maestro into the lead of a multi-agent software squad" width="100%">
+</p>
 
-One Markdown file that turns your Maestri Maestro into the lead of a multi-agent software squad: it interviews you,
-reads your project, generates a kit, and staffs each task on its own isolated floor with separate planners, builders,
-reviewers and a shipper.
+<h1 align="center">Maestri Squad</h1>
 
-[![CI](https://github.com/flaviorg/maestri-squad/actions/workflows/ci.yml/badge.svg)](https://github.com/flaviorg/maestri-squad/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Tested with Maestri 0.51.0](https://img.shields.io/badge/tested%20with-Maestri%200.51.0-informational)](SQUAD-BOOTSTRAP.md)
+<p align="center">
+  <strong>One Markdown file that turns your <a href="https://www.themaestri.app/">Maestri</a> Maestro into the lead of a multi-agent software squad.</strong><br>
+  It interviews you, reads your project, generates a kit, and staffs each task on its own isolated floor with separate planners, builders, blind reviewers and a shipper.
+</p>
+
+<p align="center">
+  <a href="https://github.com/flaviorg/maestri-squad/actions/workflows/ci.yml"><img src="https://github.com/flaviorg/maestri-squad/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-E5261A.svg" alt="License: MIT"></a>
+  <a href="SQUAD-BOOTSTRAP.md"><img src="https://img.shields.io/badge/tested%20with-Maestri%200.51.0-161310.svg" alt="Tested with Maestri 0.51.0"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/version-1.0.0-7A7166.svg" alt="Version 1.0.0"></a>
+</p>
 
 English · [Português (Brasil)](README.pt-BR.md)
+
+<p align="center">
+  <img src="docs/demo.gif" alt="16-second tour: paste the file, answer four questions, review the kit, one floor per task, gates with evidence" width="100%">
+</p>
 
 The product is [`SQUAD-BOOTSTRAP.md`](SQUAD-BOOTSTRAP.md). You hand it to the Maestro (the lead agent of a Maestri
 workspace; Maestri is the macOS spatial workspace for AI agents) and it does the rest, asking you only what it cannot
 find out by reading the repo. There is nothing to install: the setup is a conversation, and its output is a folder
 of plain files.
+
+```text
+Download the bootstrap with curl -fsSL https://raw.githubusercontent.com/flaviorg/maestri-squad/v1.0.0/SQUAD-BOOTSTRAP.md -o /tmp/SQUAD-BOOTSTRAP.md, read /tmp/SQUAD-BOOTSTRAP.md in full, and follow it for this project.
+```
+
+Paste that into your Maestro and answer four questions. Full steps in [Quick start](#quick-start).
+
+**At a glance**
+
+| | |
+|---|---|
+| **Separation of duties** | Helm plans, Veto approves, Probe writes failing tests, Anvil makes them pass, Rook and Onyx review blind, Dock is the only committer. |
+| **One floor per task** | Each task gets its own git worktree, branch, dev-server port and device. Your checkout is never touched. |
+| **Evidence, not vibes** | "Done" means a command and its output recorded in the TRACE note. Every gate is logged. |
+| **Cross-family review** | Gates run on a different model family than planners and builders when you have two providers. |
+| **Nothing leaves the machine** | Push, PR and tracker writes wait for your explicit go. Four safety lines no briefing can override. |
+| **Sized to the task** | XS floors run four agents; S, M and L run seven at rising effort. Models are allocated by quota. |
+
+<details>
+<summary><b>Contents</b></summary>
+
+- [Why](#why)
+- [How it works](#how-it-works)
+- [Requirements](#requirements)
+- [Quick start](#quick-start)
+- [What Maestro will ask you](#what-maestro-will-ask-you)
+- [The generated kit](#the-generated-kit)
+- [The squad](#the-squad)
+- [Task sizes](#task-sizes)
+- [Model allocation](#model-allocation)
+- [The pipeline](#the-pipeline)
+- [Supported stacks](#supported-stacks)
+- [Safety defaults](#safety-defaults)
+- [Updating](#updating)
+- [Troubleshooting](#troubleshooting)
+- [FAQ](#faq)
+- [Contributing](#contributing)
+- [License](#license)
+
+</details>
 
 ## Why
 
@@ -610,3 +662,8 @@ lists, both one POSIX extended regex per line, with `#` comments and blank lines
 ## License
 
 [MIT](LICENSE) © 2026 Flavio Gouveia
+
+### Credits
+
+- [Maestri](https://www.themaestri.app/), the infinite canvas for orchestrating AI agents, by its authors. This project is an independent kit for it and is not affiliated with Maestri.
+- Built by [Flavio Gouveia](https://oflavio.dev), a senior frontend and mobile engineer who shows how a real developer uses Claude and Codex at work · [Instagram @oflavio.dev](https://www.instagram.com/oflavio.dev/) · [GitHub](https://github.com/flaviorg)

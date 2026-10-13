@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- README (EN and PT-BR): banner, 16-second demo GIF, "at a glance" table, collapsible contents and credits. No
+  behavior change.
+- `docs/`: `banner.png`, `demo.gif` and `demo.mp4`, built with the Motion Studio skill from the kit's own flow.
+
 ## 1.0.0 — 2026-10-13
 
 First public release.
